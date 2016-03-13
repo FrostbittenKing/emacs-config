@@ -4,3 +4,5 @@
 *#
 .#*
 *.stamp
+emacs.desktop
+elpa/

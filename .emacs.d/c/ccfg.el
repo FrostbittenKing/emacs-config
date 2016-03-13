@@ -1,4 +1,10 @@
 ;;;; c/c++ cfg
+
+;; WORKAROUND FOR YAS
+(defalias 'yas/get-snippet-tables 'yas--get-snippet-tables)
+(defalias 'yas/table-hash 'yas--table-hash)
+;; END WORKAROUND
+
 (defun cedet-commands ()
   (local-set-key [(control return)] 'semantic-ia-complete-symbol)
   (local-set-key "\C-j" 'semantic-ia-complete-symbol)
@@ -32,14 +38,17 @@
 		 :filename header))
 	      files))))
 
-
+(semantic-mode 1)
 (global-ede-mode 1)                      ; Enable the Project management system
-(semantic-load-enable-excessive-code-helpers)      ; Enable prototype help and smart completion 
-					; (semantic-load-enable-code-helpers)
-(global-srecode-minor-mode 1)            ; Enable template insertion menu
+;;NOT NEEDED
+;;(semantic-load-enable-excessive-code-helpers)      ; Enable prototype help and smart completion 
+;;(semantic-load-enable-code-helpers)
+;; END NOT NEEDED
+
+;(global-srecode-minor-mode 1)            ; Enable template insertion menu
 (semanticdb-enable-gnu-global-databases 'c-mode)
 (semanticdb-enable-gnu-global-databases 'c++-mode)
-(semantic-load-enable-primary-exuberent-ctags-support)
+;;(semantic-load-enable-primary-exuberent-ctags-support)
 ;(semantic-idle-completions-mode 1)
 ;  (setq-mode-local c-mode semanticdb-find-default-throttle '(project unloaded system recursive))
 ;  (setq-mode-local c++-mode semanticdb-find-default-throttle '(project unloaded system recursive))
@@ -53,10 +62,17 @@
 (cedet-commands)
 (cedet-self-insert)
 
-(add-to-list 'ac-sources 'ac-source-yasnippet)
+(add-to-list 'ac-sources 'ac-source-semantic)
 (setq ac-auto-start nil)
 
-;; yasnippets
-(yas-reload-all)
-(yas-minor-mode)
+;; semantic config
+(global-semantic-idle-completions-mode t)
+(global-semantic-decoration-mode t)
+(global-semantic-highlight-func-mode t)
+(global-semantic-stickyfunc-mode)
+(global-semantic-show-unmatched-syntax-mode t)
+
+;; enable auto-complete
+(ac-config-default)
+
 
