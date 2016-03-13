@@ -3,6 +3,10 @@
 (add-to-list 'load-path "~/.emacs.d/config-init")
 (load-library "init-emacs-cfg") ;; config to run melpa initialization
 
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(init-emacs-cfg)
+
 ;; Automatically save and restore sessions
 (setq desktop-dirname             "~/.emacs.d/desktop/"
       desktop-base-file-name      "emacs.desktop"
@@ -137,17 +141,27 @@
 ;;(require 'anything)
 ;;(require 'anything-show-completion)
 
-(require 'yari)
+
 
 ;; setup yas
 ;; in theory this shouldn't be needed
-(require 'yasnippet)
-;;(setq yas-snippet-dirs (cons "~/.emacs.d/snippets/yasnippet-snippets/" yas-snippet-dirs))
+
 
 ;; global programming mode
 (defun coding ()
-  (yas-reload-all)
+  ;; needed due to customized initialization
+  (require 'yasnippet)
+  ;;(setq yas-snippet-dirs (cons "~/.emacs.d/snippets/yasnippet-snippets/" yas-snippet-dirs))
+  (yas-reload-all)   
   (yas-minor-mode 1)
+  
+  ;; setup auto-complete
+  (require 'auto-complete-config)
+  (setq ac-auto-start nil)
+  (ac-set-trigger-key "TAB")
+  (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+  (ac-config-default)
+  
   (linum-mode)
   )
 
@@ -175,17 +189,19 @@
 ; haml
 (defun haml_coding ()
   (load-library "hamlcfg")
-)
-;; setup auto-complete
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-(ac-set-trigger-key "TAB")
+  )
+
+(defun my-after-init-hook()
+  '(lambda () (setq debug-on-error t)
+     )
+  )
 
 ;; install hooks
 ;; global programming mode
 (add-hook 'prog-mode-hook 'coding)
 (add-hook 'emacs-lisp-mode-hook (lambda ()
- 				  (ac-config-default)))
+;;				  (ac-config-default)
+	  ))
 (add-hook 'c-mode-common-hook 'c_coding)
 (add-hook 'LaTeX-mode-hook 'latex_docs)
 (add-hook 'ruby-mode-hook 'ruby_coding)
@@ -194,11 +210,9 @@
 
 (add-hook 'feature-mode-hook (lambda () 
 			       ))
-(add-hook 'after-init-hook
-          '(lambda () (setq debug-on-error t)
-	     )
-	  )
-
 (setq LaTeX-command-style '(("" "%(PDF)%(latex) -file-line-error %S%(PDFout)")))
 (setq debug-on-error t)
 (put 'upcase-region 'disabled nil)
+;; init.el
+
+(add-hook 'after-init-hook 'my-after-init-hook)
