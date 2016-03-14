@@ -1,9 +1,8 @@
 #!/bin/bash
-emacs_git_dir="~/emacs-config"
-emacs_conf_dir="~/.emacs.d"
-if [ -d $emacs_conf_dir ]
+emacs_config_dir="$HOME/emacs-config/.emacs.d"
+emacs_d="$HOME/.emacs.d"
+if [ -d $emacs_d ]
 then
-    rm $emacs_conf_dir
-    ln -s $emacs_git_dir/.emacs.d $emacs_conf_dir
+    rm -rf $emacs_d
 fi
-    
+ln -s $emacs_config_dir $emacs_d
