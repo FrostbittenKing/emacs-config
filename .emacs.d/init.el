@@ -76,6 +76,7 @@
  ;; If there is more than one, they won't work right.
  '(anything-show-completion-activate t)
  '(backup-by-copying-when-linked t)
+ '(frame-background-mode (quote dark))
  '(git-state-modeline-decoration (quote git-state-decoration-large-dot))
  '(global-font-lock-mode t)
  '(inhibit-startup-screen t)
