@@ -38,6 +38,8 @@
 		 :filename header))
 	      files))))
 
+
+(defun c_coding ()
 (semantic-mode 1)
 (global-ede-mode 1)                      ; Enable the Project management system
 ;;NOT NEEDED
@@ -53,7 +55,7 @@
 ;  (setq-mode-local c-mode semanticdb-find-default-throttle '(project unloaded system recursive))
 ;  (setq-mode-local c++-mode semanticdb-find-default-throttle '(project unloaded system recursive))
 ;  (global-semantic-tag-folding-mode 1)
-(linum-mode 1)
+
 ;  (semantic-tag-folding-mode 
 ;(DE-imply-includes-in-directory (concat wx-base-dir "/wx/gtk")) 
 
@@ -71,8 +73,4 @@
 (global-semantic-highlight-func-mode t)
 (global-semantic-stickyfunc-mode)
 (global-semantic-show-unmatched-syntax-mode t)
-
-;; enable auto-complete
-(ac-config-default)
-
-
+)
