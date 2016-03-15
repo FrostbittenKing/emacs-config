@@ -1,3 +1,4 @@
+(defun latex_docs ()
 ;; B0RKED, because this moron modiified the upstream version
 ;; (require 'predictive)
 ;; (autoload 'predictive-mode "predictive" "predictive" t)
@@ -31,3 +32,4 @@
 ; TeX-language-de-hook
 (add-hook 'TeX-language-de-hook
 	  (lambda () (ispell-change-dictionary "de_AT")))
+)

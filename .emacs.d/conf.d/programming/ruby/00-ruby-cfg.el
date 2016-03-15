@@ -9,6 +9,7 @@
   (end-of-line))
 ;; workaround for moron
 
+(defun ruby_coding ()
 (flycheck-mode)
 (setq flycheck-check-syntax-automatically '(mode-enabled save))
   (add-to-list 'ac-omni-completion-sources
@@ -29,6 +30,11 @@
 
 ;; indent-tabs-mode t)
 ;;(setq yas-snippet-dirs (cons "~/.emacs.d/snippets/yasnippet-snippets/" yas-snippet-dirs))
+;;(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(add-to-list 'ac-sources 'ac-source-yasnippet)
+(ruby-electric-mode)
+)
 
-;(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
-
+;; rsense
+;; (setq rsense-home "$RSENSE_HOME")
+;; (add-to-list 'load-path (concat rsense-home "/etc"))

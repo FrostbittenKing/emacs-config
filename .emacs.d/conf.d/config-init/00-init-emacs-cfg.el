@@ -1,6 +1,6 @@
-;; load melpa
-;(require 'package)
-;;(package-initialize)
+;; melpa initialization
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 ;; first time initialization of packages to install
 (defun init-emacs-cfg ()
@@ -16,3 +16,5 @@
     (unless (package-installed-p package)
       (package-install package)))
   )
+
+(init-emacs-cfg)
