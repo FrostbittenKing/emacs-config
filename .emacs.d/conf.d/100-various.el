@@ -13,3 +13,6 @@
 ;(require 'git-emacs)
 
 (setq-default ispell-program-name "aspell")
+(setq LaTeX-command-style '(("" "%(PDF)%(latex) -file-line-error %S%(PDFout)")))
+(setq debug-on-error t)
+(put 'upcase-region 'disabled nil)
