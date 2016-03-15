@@ -6,3 +6,4 @@ then
     rm -rf $emacs_d
 fi
 ln -s $emacs_config_dir $emacs_d
+mkdir $emacs_d/desktop
