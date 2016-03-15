@@ -2,9 +2,12 @@
 
 ;; config to run melpa initialization
 (add-to-list 'load-path "~/.emacs.d/conf.d/config-init")
-(load-library "init-emacs-cfg") 
+(load-library "init-emacs-cfg")
 
-(autoload 'my-site-start "~/.emacs.d/my-site-start" nil t)
+(add-to-list 'load-path "~/.emacs.d/conf.d/site-lisp")
+(load-library "install-elisp")
+(load-library "my-site-start")
+;(autoload 'my-site-start "~/.emacs.d/my-site-start" nil t)
 (my-site-start "~/.emacs.d/conf.d/")
 
 ;;; uncomment this line to disable loading of "default.el" at startup
@@ -36,13 +39,9 @@
  ;; If there is more than one, they won't work right.
  )
 ;; load paths
-(add-to-list 'load-path "~/.emacs.d/lisp")
-(add-to-list 'load-path "~/.emacs.d/c")
+;;(add-to-list 'load-path "~/.emacs.d/<foobar>")
 
-;; load libs
-;; NOT NEEDED
-(load "install-elisp.el" nil t t)
-
+; 
 ;;(require 'anything)
 ;;(require 'anything-show-completion)
 
