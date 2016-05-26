@@ -9,6 +9,7 @@
 (add-hook 'ruby-mode-hook 'ruby_coding)
 (add-hook 'markdown-mode-hook 'markdown_editing)
 (add-hook 'haml-mode-hook 'haml_coding)
+(add-hook 'yaml-mode-hook 'yaml_coding)
 ;; global programming mode
 (add-hook 'prog-mode-hook 'coding)
 (add-hook 'emacs-lisp-mode-hook (lambda ()
