@@ -1,4 +1,4 @@
-(defun latex_docs ()
+(defun LaTeX-mode-hook-fun ()
 ;; B0RKED, because this moron modiified the upstream version
 ;; (require 'predictive)
 ;; (autoload 'predictive-mode "predictive" "predictive" t)

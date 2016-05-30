@@ -1,3 +1,3 @@
-(defun yaml_coding ()
+(defun yaml-mode-hook-fun ()
 
   )

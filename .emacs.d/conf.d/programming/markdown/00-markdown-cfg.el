@@ -1,4 +1,4 @@
-(defun markdown_editing ()
+(defun markdown-mode-hook-fun ()
   (coding)
   (setq markdown-content-type "text/html")
   (setq markdown-command "pandoc -s")

@@ -9,7 +9,7 @@
   (end-of-line))
 ;; workaround for moron
 
-(defun ruby_coding ()
+(defun ruby-mode-hook-fun ()
 (flycheck-mode)
 (setq flycheck-check-syntax-automatically '(mode-enabled save))
   (add-to-list 'ac-omni-completion-sources

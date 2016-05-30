@@ -1,3 +1,3 @@
-(defun haml_coding ()
+(defun haml-mode-hook-fun ()
 
   )
