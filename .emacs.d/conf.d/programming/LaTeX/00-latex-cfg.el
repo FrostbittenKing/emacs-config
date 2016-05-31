@@ -10,7 +10,6 @@
 ;;       fill-column 80
 ;;       )
 
-(linum-mode 1)
 (setq TeX-command-default "LatexMk")
 (setq Tex-parse-self t)
 (setq-default TeX-master nil) ; Query for master file.
