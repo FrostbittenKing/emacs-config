@@ -15,4 +15,3 @@
 (setq-default ispell-program-name "aspell")
 (setq LaTeX-command-style '(("" "%(PDF)%(latex) -file-line-error %S%(PDFout)")))
 (put 'upcase-region 'disabled nil)
-

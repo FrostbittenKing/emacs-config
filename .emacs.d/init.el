@@ -7,6 +7,7 @@
 (add-to-list 'load-path "~/.emacs.d/conf.d/site-lisp")
 (load-library "install-elisp")
 (load-library "my-site-start")
+(load-library "common-helpers")
 ;(autoload 'my-site-start "~/.emacs.d/my-site-start" nil t)
 (my-site-start "~/.emacs.d/conf.d/")
 
