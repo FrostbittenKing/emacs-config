@@ -1,6 +1,6 @@
 ;; text-mode
 (defun editing()
-  (linum-mode)
+  (my-linum-mode)
   )
 
 ;; global text-mode

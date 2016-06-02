@@ -8,6 +8,7 @@
 (load-library "install-elisp")
 (load-library "my-site-start")
 (load-library "common-helpers")
+(load-library "copypaste")
 ;(autoload 'my-site-start "~/.emacs.d/my-site-start" nil t)
 (my-site-start "~/.emacs.d/conf.d/")
 
@@ -38,6 +39,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "black" :foreground "light gray" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 99 :width normal :foundry "1ASC" :family "Droid Sans Mono")))))
+
 ;; load paths
 ;;(add-to-list 'load-path "~/.emacs.d/<foobar>")
 
@@ -46,3 +48,5 @@
 ;;(require 'anything-show-completion)
 
 ;; init.el
+
+
