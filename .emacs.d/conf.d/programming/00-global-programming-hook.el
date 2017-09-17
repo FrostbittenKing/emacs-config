@@ -2,7 +2,8 @@
 (defun coding ()
   ;; needed due to customized initialization
   (require 'yasnippet)
-  ;;(setq yas-snippet-dirs (cons "~/.emacs.d/snippets/yasnippet-snippets/" yas-snippet-dirs))
+  (setq yas-snippet-dirs (cons "~/.emacs.d/snippets" yas-snippet-dirs))
+  (define-key yas-minor-mode-map (kbd "`") 'yas-expand)
   (yas-reload-all)   
   (yas-minor-mode 1)
   
